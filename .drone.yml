@@ -1,0 +1,43 @@
+kind: pipeline
+name: backend
+
+steps:
+  - name: test
+    image: sidestream/python-poetry:3.9
+    depends_on: [clone]
+    commands:
+      - cd backend
+      - poetry install
+      - poetry run pytest
+
+trigger:
+    event:
+        - pull_request
+---
+kind: pipeline
+name: frontend
+
+steps:
+  - name: install
+    image: node:16.9.1
+    commands:
+        - cd frontend
+        - npm ci
+
+  - name: lint
+    image: node:16.9.1
+    depends_on: [install]
+    commands:
+        - cd frontend
+        - npm run lint
+
+  - name: test
+    image: node:16.9.1
+    depends_on: [install]
+    commands:
+        - cd frontend
+        - npm run test
+
+trigger:
+  event:
+    - pull_request

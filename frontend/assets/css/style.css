@@ -1,0 +1,44 @@
+body {
+  background-color: blueviolet;
+  font-family: sans-serif;
+}
+.resolved, .unresolved, .backlog {
+  display: flex;
+  flex-direction: column;
+}
+.resolved button, .unresolved button, .backlog button {
+  background-color: #F7931D;
+  padding: 5px;
+  border-radius: 6px;
+  color: rgb(238, 235, 235);
+  margin-bottom: 21px;
+  margin-left: 14px;
+}
+
+.resolved button:hover, .unresolved button:hover {
+  background-color: #042A37;
+  transition:all 0.2s;
+  box-shadow: 2px 2px #888888;
+  border:none
+ 
+}
+
+
+
+.resolved span, .unresolved span, .backlog span {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  background-color: #9B0C42;
+  margin: 0 0 20px 0;
+}
+
+
+.undoResolve {
+  background-color: #042A37;
+  width: 12%;
+  margin: 20px 0;
+  border-radius: 5px;
+  padding: 10px;
+  color: white;
+}
