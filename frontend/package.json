@@ -20,7 +20,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.13.1",
     "js-undo-redo": "^2.0.0",
-    "node-gyp": "^8.4.1",
+    "node-gyp": "^10.2.0",
     "nuxt": "^2.14.7"
   },
   "devDependencies": {
